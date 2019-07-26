@@ -9,7 +9,7 @@ const Container = props => (
             : "container d-flex flex-wrap justify-content-center my-2"
         }
     >
-        { props.characters.map((a, i) => <Character name={a} key={i} clickEvent={props.clickEvent} />) }
+        { props.characters.map((a, i) => <Character name={a} key={i} clickEvent={ props.clickEvent } />) }
     </div>
 );
 
