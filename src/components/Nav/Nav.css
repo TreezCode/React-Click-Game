@@ -1,9 +1,52 @@
 .navbar {
     background: black;
-    color: rgb(37, 243, 19);
+    color: rgb(19, 243, 228);
+    font-family: 'Indie Flower', cursive;
+    font-variant: small-caps;
+    box-shadow: 0 0 15px 0px rgb(19, 221, 243);
+}
+
+.navbar-brand {
+    margin: 0;
+    font-family: 'Butcherman', cursive;
+    font-size: 1.75em;
+    letter-spacing: 1px;
+}
+
+.nav-msg {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+.score {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    padding: 0.25em 0;
 }
 
 .pipe {
     margin: 0 .75em;
     color: white
+}
+
+.react-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 10vmin;
+    pointer-events: none;
+  }
+  
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+
+@media only screen and (max-width: 960px) {
+    .navbar {
+        flex-direction: column;
+    }
 }

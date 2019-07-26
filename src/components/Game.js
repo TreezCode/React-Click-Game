@@ -11,7 +11,7 @@ class Game extends Component {
         highScore: 0,
 
         // Initial navbar message
-        navMessage: "Click a Rick to begin!",
+        navMessage: "Click a Rick to begin",
 
         // Store array of img urls
         allCharacters: this.shuffleArray(),
@@ -71,7 +71,7 @@ class Game extends Component {
             return this.setState({
                 score: score,
                 highScore: highScore,
-                navMessage: "Correct!",
+                navMessage: "Correct",
                 allCharacters: shuffle,
                 wasClicked: prevState,
                 shake: false
@@ -89,7 +89,7 @@ class Game extends Component {
             return this.setState({
                 score: score,
                 highScore: highScore,
-                navMessage: "Incorrect!",
+                navMessage: "Incorrect",
                 allCharacters: shuffle,
                 wasClicked: [],
                 shake: true

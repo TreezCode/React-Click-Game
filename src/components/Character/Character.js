@@ -5,7 +5,7 @@ import "./Character.css";
 const Character = props => (
     <>
         <div className="card p-0" onClick={event => props.clickEvent(event.target.src)}>
-            <img className="img-fluid" src={props.name} alt="Rick"/>
+            <img className="img-fluid image" src={props.name} alt="Rick"/>
         </div>
     </>
 );
