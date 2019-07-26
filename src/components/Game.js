@@ -20,8 +20,9 @@ class Game extends Component {
         // Store each clicked item
         wasClicked: [],
 
-        // Shake container on incorrect
-        shake: false
+        // Shake container / flip cards on incorrect
+        shake: false,
+        flip: false
     };
 
     // Bind current this to checkClicked to pass to Character component
@@ -72,15 +73,16 @@ class Game extends Component {
             }
 
             // Hanlde correct state
-            return this.setState({
+            this.setState({
                 score: score,
                 highScore: highScore,
                 navMessage: "Correct",
                 navMsgColor: "success",
                 allCharacters: shuffle,
                 wasClicked: prevState,
-                shake: false
+                shake: false,
             });
+            return setTimeout(() => this.setState({ navMsgColor: "" }), 500);
         }
         
         // If user guess is found in wasClicked
@@ -90,17 +92,18 @@ class Game extends Component {
             let score = 0;
 
             // Handle incorrect state
-            return this.setState({
+            this.setState({
                 score: score,
                 highScore: highScore,
                 navMessage: "Incorrect",
                 navMsgColor: "fail",
                 allCharacters: shuffle,
                 wasClicked: [],
-                shake: true
+                shake: true,
+                flip: true
             });
+            return setTimeout(() => this.setState({ navMsgColor: "", flip: false }), 500)
         }
-        return setTimeout(() => this.setState({ navMsgColor: "" }), 500);
     }
     render() {
         const state = this.state
@@ -115,6 +118,7 @@ class Game extends Component {
                 <Banner />
                 <Container
                     shake={state.shake}
+                    flip={state.flip}
                     characters={state.allCharacters}
                     clickEvent={this.clickEvent}
                 />

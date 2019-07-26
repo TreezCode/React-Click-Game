@@ -18,14 +18,45 @@
     font-size: 1.5em;
     letter-spacing: 2px;
     font-weight: bold;
+    transition: all 5s;
 }
 
 .success {
-    color: green;
+    animation: successFade 0.5s;
 }
 
 .fail {
-    color: red;
+    animation: failFade 0.5s;
+}
+
+@keyframes successFade {
+    0% {
+        color: rgb(19, 243, 228);
+    }
+    25% {
+        color: rgb(31, 208, 4);
+    }
+    75% {
+        color: rgb(31, 208, 4);
+    }
+    100% {
+        color: rgb(19, 243, 228);
+    }
+}
+  
+@keyframes failFade {
+    0% {
+        color: rgb(19, 243, 228);
+    }
+    25% {
+        color: red;
+    }
+    75% {
+        color: red;
+    }
+    100% {
+        color: rgb(19, 243, 228);
+    }
 }
 
 .score {
@@ -40,13 +71,13 @@
 }
 
 .react-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: react-logo-spin infinite 20s linear;
     height: 10vmin;
     pointer-events: none;
   }
   
 
-@keyframes App-logo-spin {
+@keyframes react-logo-spin {
     from {
         transform: rotate(0deg);
     }
