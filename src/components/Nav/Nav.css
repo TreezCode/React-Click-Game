@@ -1,0 +1,9 @@
+.navbar {
+    background: black;
+    color: rgb(37, 243, 19);
+}
+
+.pipe {
+    margin: 0 .75em;
+    color: white
+}
