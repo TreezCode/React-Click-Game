@@ -6,14 +6,15 @@ import images from "../images"
 
 class Game extends Component {
     state = {
-        // Initial score
+        // Initial score / high score
         score: 0,
         highScore: 0,
 
-        // Initial navbar message
+        // Initial navbar message / color
         navMessage: "Click a Rick to begin",
+        navMsgColor: "",
 
-        // Store array of img urls
+        // Store array of shuffled img urls
         allCharacters: this.shuffleArray(),
 
         // Store each clicked item
@@ -23,8 +24,10 @@ class Game extends Component {
         shake: false
     };
 
+    // Bind current this to checkClicked to pass to Character component
     clickEvent = this.checkClicked.bind(this);
 
+    // Shuffle img urls
     shuffleArray() {
 
         // Create copy of current array to modify by value
@@ -41,6 +44,7 @@ class Game extends Component {
         return shuffledArr;
     }
 
+    // Check clicked item and return state
     checkClicked(guess) {
 
         // Create copy of wasClicked array to modify by value
@@ -72,12 +76,12 @@ class Game extends Component {
                 score: score,
                 highScore: highScore,
                 navMessage: "Correct",
+                navMsgColor: "success",
                 allCharacters: shuffle,
                 wasClicked: prevState,
                 shake: false
             });
         }
-        
         
         // If user guess is found in wasClicked
         if (this.state.wasClicked.includes(guess)) {
@@ -90,28 +94,29 @@ class Game extends Component {
                 score: score,
                 highScore: highScore,
                 navMessage: "Incorrect",
+                navMsgColor: "fail",
                 allCharacters: shuffle,
                 wasClicked: [],
                 shake: true
             });
         }
-        // return setTimeout(() => this.setState({ navMsgColor: "" }), 500);
+        return setTimeout(() => this.setState({ navMsgColor: "" }), 500);
     }
-
     render() {
         const state = this.state
         return (
             <>
                 <Nav 
-                    score={ state.score}
-                    highScore={ state.highScore }
-                    navMessage={ state.navMessage }
+                    score={state.score}
+                    highScore={state.highScore}
+                    navMessage={state.navMessage}
+                    navMsgColor={state.navMsgColor}
                 />
                 <Banner />
                 <Container
-                    shake={ state.shake }
-                    characters={ state.allCharacters }
-                    clickEvent={ this.clickEvent }
+                    shake={state.shake}
+                    characters={state.allCharacters}
+                    clickEvent={this.clickEvent}
                 />
             </>
         );
