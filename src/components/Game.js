@@ -41,7 +41,6 @@ class Game extends Component {
         while (newArr.length > 0) {
             shuffledArr.push(newArr.splice(Math.floor(Math.random() * newArr.length), 1)[0]);
         }
-
         return shuffledArr;
     }
 
