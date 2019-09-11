@@ -1,7 +1,6 @@
 # React-Click-Game
 
-<a href="https://treezcode.github.io/React-Click-Game/" target="_blank">React Click Game</a>
-
+Demo: [React-Click-Game](https://treezcode.github.io/React-Click-Game/).
 ## About 📖
 React-Click-Game is a web based memory challenge game built with ReactJS and deployed on Github using GH-Pages.
 
@@ -9,8 +8,6 @@ React-Click-Game is a web based memory challenge game built with ReactJS and dep
 The user is challenged to test their memory by clicking on one of the, randomly generated, images of *Rick Sanchez*. The images will then be randomly repositioned and the user must click another *different* image of Rick. If the user clicks the same image then the cards flip, screen shakes and the user score is reset.
 
 <img src= "src/images/click-game.png" alt="React Click Game" width="100%">
-
-Demo: [React-Click-Game](https://treezcode.github.io/React-Click-Game/).
 
 ## How it Works 🔨
 The `Game.js` component contains a majority of the applications core functionality.
